@@ -1,6 +1,6 @@
-const express = require('express')
-const path = require('path')
-const PORT = process.env.PORT || 5000
+const express = require('express');
+const path = require('path');
+const PORT = process.env.PORT || 5000;
 
 // For PostGRE db
 const { Pool } = require('pg');
@@ -13,14 +13,16 @@ const pool = new Pool({
 
 const app = express();
 
-// app.use (express.static (path.join (__ dirname, '../dist')));
+// Router for Lab 1
+const lab1Router = require('./router/lab1Router');
+app.use('/lab1', lab1Router);
+
 app.use(express.static(path.join(__dirname, 'public')))
-  // .set('views', path.join(__dirname, 'views'))
-  // .set('view engine', 'ejs')
-  // .get('/', (req, res) => res.render('pages/index'))
-  .get('/hej', (req, res) => { res.send('Hejhej!') })
-  .get('/echo/:msg', (req, res) => { res.send(req.params.msg) })
-  .get('/db', async (req, res) => {
+  .set('views', path.join(__dirname, 'views'))
+  .set('view engine', 'ejs')
+  .get('/', (req, res) => { res.render('index', { text: "No route" }) })
+  .get('/echo/:msg', (req, res) => { res.send(req.params.msg) })  // Echo test route
+  .get('/db', async (req, res) => { // Db test route
     try {
       const client = await pool.connect();
       const result = await client.query('SELECT * FROM test_table');
@@ -33,8 +35,6 @@ app.use(express.static(path.join(__dirname, 'public')))
       res.send("Error " + err);
     }
   })
-  .listen(PORT, () => console.log(`Listening on ${PORT}`))
+  .listen(PORT, () => console.log(`Listening on http://localhost:${PORT}`))
 
 console.log('Hej från index.js');
-
-
