@@ -22,3 +22,16 @@ Hover pictures for description:<br>
 <img src="https://user-images.githubusercontent.com/79512058/161391881-5c29631d-a033-4222-9d7d-72474a750086.png" title="Lab 1 - Route added to express" width="40%">
 <img src="https://user-images.githubusercontent.com/79512058/161391886-e9f14aeb-bb32-4102-996b-318ea7ca018d.png" title="Lab 1 - Db route: SELECT * FROM test_table" width="40%">
 <img src="https://user-images.githubusercontent.com/79512058/161421152-9e0aaf1d-d6e3-4e13-8b5b-7a64a75a9427.png" title="Lab 1 - Db: Access to the db hosted on Heroku" width="40%">
+
+<h1># Lab 2 # </h1>
+<p>
+  <strong>Frontend calculator: </strong>https://cloud-lab1.herokuapp.com/lab2<br>
+  <strong>Calc route: </strong>https://cloud-lab1.herokuapp.com/lab2/calc <br>
+  <strong>Example calc request: </strong>https://cloud-lab1.herokuapp.com/lab2/calc?operation=mul&numberOne=3&numberTwo=2
+</p>
+1. The frontend client (https://cloud-lab1.herokuapp.com/lab2) gathers the form input
+2. The frontend sends a GET request to the REST route (https://cloud-lab1.herokuapp.com/lab2/calc?operation=mul&numberOne=3&numberTwo=2)
+3. The REST api calls the backend lab2Calc.js with the parameters and receives a result from the backend
+4. The result (or error) is returned to the client and presented on the page
+
+<img src="https://user-images.githubusercontent.com/79512058/161429946-480b5eff-55cb-4257-8abc-ddc25e75f754.png" title="Lab 2 - Frontend" width="40%"> <img src="https://user-images.githubusercontent.com/79512058/161429965-997aef4c-703a-4a5e-a3a8-fa4956d3d2aa.png" title="Lab 2 - REST call result, without using frontend" width="40%"> <img src="https://user-images.githubusercontent.com/79512058/161430009-70af4908-157a-48c8-8389-ea7dd099a974.png" title="Lab 2 - REST call with error from invalid parameter, without using frontend" width="40%">
