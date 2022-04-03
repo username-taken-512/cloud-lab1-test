@@ -23,6 +23,10 @@ const app = express();
 const lab1Router = require('./router/lab1Router');
 app.use('/lab1', lab1Router);
 
+// Router for Lab 2 - Calculator
+const lab2Router = require('./router/lab2Router');
+app.use('/lab2', lab2Router);
+
 app.use(express.static(path.join(__dirname, 'public')))
   .set('views', path.join(__dirname, 'views'))
   .set('view engine', 'ejs')
