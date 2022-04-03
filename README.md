@@ -29,9 +29,12 @@ Hover pictures for description:<br>
   <strong>Calc route: </strong>https://cloud-lab1.herokuapp.com/lab2/calc <br>
   <strong>Example calc request: </strong>https://cloud-lab1.herokuapp.com/lab2/calc?operation=mul&numberOne=3&numberTwo=2
 </p>
-1. The frontend client (https://cloud-lab1.herokuapp.com/lab2) gathers the form input
-2. The frontend sends a GET request to the REST route (https://cloud-lab1.herokuapp.com/lab2/calc?operation=mul&numberOne=3&numberTwo=2)
-3. The REST api calls the backend lab2Calc.js with the parameters and receives a result from the backend
-4. The result (or error) is returned to the client and presented on the page
+
+<ol>
+  <li>The frontend client (https://cloud-lab1.herokuapp.com/lab2) gathers the form input to use as parameters</li>
+  <li>The frontend sends a GET request to the REST route (https://cloud-lab1.herokuapp.com/lab2/calc?operation=mul&numberOne=3&numberTwo=2)</li>
+  <li>The REST api calls the backend lab2Calc.js with the parameters and receives a result from the backend</li>
+  <li>The result (or error) is returned to the client and presented on the page</li>
+</ol>
 
 <img src="https://user-images.githubusercontent.com/79512058/161429946-480b5eff-55cb-4257-8abc-ddc25e75f754.png" title="Lab 2 - Frontend" width="40%"> <img src="https://user-images.githubusercontent.com/79512058/161429965-997aef4c-703a-4a5e-a3a8-fa4956d3d2aa.png" title="Lab 2 - REST call result, without using frontend" width="40%"> <img src="https://user-images.githubusercontent.com/79512058/161430009-70af4908-157a-48c8-8389-ea7dd099a974.png" title="Lab 2 - REST call with error from invalid parameter, without using frontend" width="40%">
