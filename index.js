@@ -27,6 +27,10 @@ app.use('/lab1', lab1Router);
 const lab2Router = require('./router/lab2Router');
 app.use('/lab2', lab2Router);
 
+// Router for Lab 3 - Word Length Frequency
+const lab3Router = require('./router/lab3Router');
+app.use('/lab3', lab3Router);
+
 app.use(express.static(path.join(__dirname, 'public')))
   .set('views', path.join(__dirname, 'views'))
   .set('view engine', 'ejs')
@@ -45,6 +49,4 @@ app.use(express.static(path.join(__dirname, 'public')))
       res.send("Error " + err);
     }
   })
-  .listen(PORT, () => console.log(`Listening on http://localhost:${PORT}`))
-
-console.log('Hej från index.js');
+  .listen(PORT, () => console.log(`Listening on http://localhost:${PORT}`));

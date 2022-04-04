@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Lab 3 - Word Length Counter</title>
+  <link rel="stylesheet" href="./stylesheets/lab3-style.css" </head>
+
+<body>
+  <h1>Lab 3 - Word Length Counter</h1>
+  <p>Upload a file to fill the textbox with the text file content, or type in your words manually</p>
+
+  <div>
+    <input type="file" id="loadfile">
+    <form action="/lab3/getWordLengthFrequency" id="word-form">
+      <label for="textinput">Enter words:</label><br>
+      <textarea id="textinput" name="textinput" rows="4"
+        cols="50">O Hi this a test Car River Deer Car Bear and</textarea>
+      <br>
+      <input type="submit" value="Submit">
+    </form>
+  </div>
+
+  <div class="result-container"> </div>
+
+  <script src="/js/lab3FrontWordLengthFrequency.js"></script>
+</body>
+
+</html>
