@@ -19,22 +19,38 @@ document.getElementById('loadfile').addEventListener('change', async event => {
 document.getElementById('word-form').addEventListener('submit', async event => {
   event.preventDefault(); // Stay on page
 
+  console.log('Attempt to get session accessToken: ', getAccessToken());
+
   const textInput = document.forms['word-form'].elements.textinput.value; // Get form input
 
   // POST to REST API
+  let response;
   let result;
   try {
-    result = await (await fetch('/lab3/getWordLengthFrequency', {
+    response = await (await fetch('/lab3/getWordLengthFrequency', {
       method: 'POST',
-      headers: { 'Content-Type': 'application/json' },
+      headers: {
+        'Content-Type': 'application/json',
+        'Authorization': 'Bearer ' + getAccessToken()
+      },
       body: JSON.stringify({
         data: textInput.trim(),
       })
-    })).json();
+    }));
+    console.log(response);
+    if (response.status === 200) { result = await response.json() }
 
-    drawResultTable(result);  // Draw result
   } catch (error) {
     console.log(error);
+  }
+
+  if (response.status === 403) {
+    alert('Authentication error! Login first!');
+    return;
+  }
+
+  if (result) {
+    drawResultTable(result);  // Draw result
   }
 });
 

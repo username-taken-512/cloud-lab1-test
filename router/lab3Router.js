@@ -3,9 +3,13 @@ const router = express.Router();
 router.use(express.json());
 router.use(express.urlencoded({ extended: true }));
 
+const auth = require('../js/auth');
+const authenticateToken = auth.authenticateToken;
+
 const getWordLengthFrequency = require('../js/lab3WordLengthFrequency');   // Import backend Word counter
 
-router.post('/getWordLengthFrequency', (req, res) => {
+
+router.post('/getWordLengthFrequency', authenticateToken, (req, res) => {
   const wordCount = getWordLengthFrequency(req.body.data, 10);  // (data, maxWordLengthToCount)
   res.json(wordCount);
 });

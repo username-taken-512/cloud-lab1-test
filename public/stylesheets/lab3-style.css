@@ -4,7 +4,9 @@ body {
   margin: 0;
 }
 
-
+#login-form {
+  padding-bottom: 20px;
+}
 
 /* Table CSS From https://johnsardine.com/freebies/dl-html-css/simple-little-tab/ */
 table {

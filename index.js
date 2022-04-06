@@ -31,6 +31,10 @@ app.use('/lab2', lab2Router);
 const lab3Router = require('./router/lab3Router');
 app.use('/lab3', lab3Router);
 
+// Router for Login (Lab 3)
+const loginRouter = require('./router/loginRouter');
+app.use('/users', loginRouter);
+
 app.use(express.static(path.join(__dirname, 'public')))
   .set('views', path.join(__dirname, 'views'))
   .set('view engine', 'ejs')
