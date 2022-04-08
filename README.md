@@ -23,6 +23,13 @@ Hover pictures for description:<br>
 <img src="https://user-images.githubusercontent.com/79512058/161391886-e9f14aeb-bb32-4102-996b-318ea7ca018d.png" title="Lab 1 - Db route: SELECT * FROM test_table" width="40%">
 <img src="https://user-images.githubusercontent.com/79512058/161421152-9e0aaf1d-d6e3-4e13-8b5b-7a64a75a9427.png" title="Lab 1 - Db: Access to the db hosted on Heroku" width="40%">
 
+<h2>Instructions to run locally</h2>
+<ol>
+  <li>Run <strong>npm install</strong></li>
+  <li>Run <strong>npm start</strong></li>
+  <li>Connect to <strong>127.0.0.1:5000</strong> or <strong>127.0.0.1:5000/lab1</strong> or <strong>127.0.0.1:5000/db</strong></li>
+</ol>
+
 <h1># Lab 2 # </h1>
 <p>
   <strong>Frontend calculator: </strong>https://cloud-lab1.herokuapp.com/lab2<br>
@@ -38,3 +45,28 @@ Hover pictures for description:<br>
 </ol>
 
 <img src="https://user-images.githubusercontent.com/79512058/161429946-480b5eff-55cb-4257-8abc-ddc25e75f754.png" title="Lab 2 - Frontend" width="40%"> <img src="https://user-images.githubusercontent.com/79512058/161429965-997aef4c-703a-4a5e-a3a8-fa4956d3d2aa.png" title="Lab 2 - REST call result, without using frontend" width="40%"> <img src="https://user-images.githubusercontent.com/79512058/161430009-70af4908-157a-48c8-8389-ea7dd099a974.png" title="Lab 2 - REST call with error from invalid parameter, without using frontend" width="40%">
+
+<h2>Instructions to run locally</h2>
+<ol>
+  <li>Run <strong>npm install</strong></li>
+  <li>Run <strong>npm start</strong></li>
+  <li>Connect to <strong>127.0.0.1:5000/lab2</strong></li>
+</ol>
+
+<h1># Lab 3 # </h1>
+<p>
+  <strong>Word Length Frequency Calculator: </strong>https://cloud-lab1.herokuapp.com/lab3<br>
+</p>
+First, I created additional routes necessary for lab 3: One POST route to receive a word string to count and one GET route to render the frontend client (webpage). I added backend logic called by the POST route, calculating the word length frequencies and returning a result string back to the router, which in turn will send it to the client. The frontend webpage is my client for this lab. A text area receives input from the user to send to submit to the server to the POST route. 
+
+As an extra feature, I added the possibility to attach a text file, which the client will read and use to fill the text area. Additionally, I added token based (JWT) security. To acccess the /lab3/getWordLengthFrequency route, the user must now submit a valid access token. This is validated by an authentication middleware in the route. To get a valid access token, the user must use the /login route with a valid username and password. The frontend will display an error when the authentication has failed.
+
+<h2>Instructions to run (not locally) </h2>
+<p>This app should not be tested locally as it requires environment variables for JWT private keys</p>
+<ol>
+  <li>Connect to <strong>https://cloud-lab1.herokuapp.com/lab3</strong></li>
+  <li>Login with username <strong>jo</strong> and password <strong>123</strong></li>
+  <li>Upload a text file or enter words in text area</li>
+  <li>Press <strong>submit</strong></li>
+  <li>A table with the results will be generated below</li>
+</ol>
