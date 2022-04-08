@@ -57,9 +57,16 @@ Hover pictures for description:<br>
 <p>
   <strong>Word Length Frequency Calculator: </strong>https://cloud-lab1.herokuapp.com/lab3<br>
 </p>
-First, I created additional routes necessary for lab 3: One POST route to receive a word string to count and one GET route to render the frontend client (webpage). I added backend logic called by the POST route, calculating the word length frequencies and returning a result string back to the router, which in turn will send it to the client. The frontend webpage is my client for this lab. A text area receives input from the user to send to submit to the server to the POST route. 
 
-As an extra feature, I added the possibility to attach a text file, which the client will read and use to fill the text area. Additionally, I added token based (JWT) security. To acccess the /lab3/getWordLengthFrequency route, the user must now submit a valid access token. This is validated by an authentication middleware in the route. To get a valid access token, the user must use the /login route with a valid username and password. The frontend will display an error when the authentication has failed.
+<p>First, I created additional routes necessary for lab 3: One POST route to receive a word string to count and one GET route to render the frontend client (webpage). I added backend logic called by the POST route, calculating the word length frequencies and returning a result string back to the router, which in turn will send it to the client. The frontend webpage is my client for this lab. A text area receives input from the user to send to submit to the server to the POST route. 
+<br><br>
+As an extra feature, I added the possibility to attach a text file, which the client will read and use to fill the text area. Additionally, I added token based (JWT) security. To acccess the /lab3/getWordLengthFrequency route, the user must now submit a valid access token. This is validated by an authentication middleware in the route. To get a valid access token, the user must use the /login route with a valid username and password. The frontend will display an error when the authentication has failed.</p>
+
+Hover pictures for description:<br>
+<img src="https://user-images.githubusercontent.com/79512058/162522449-a9cf1f9f-9b57-4dcd-95ca-6506bd2d465b.png" title="Lab 3 - Start page" width="40%">
+<img src="https://user-images.githubusercontent.com/79512058/162522627-19b75672-b61b-4d38-9548-cbb7b0bdd66c.png" title="Lab 3 - On successful login, an access token and a refresh token is stored in the session" width="40%">
+<img src="https://user-images.githubusercontent.com/79512058/162522782-68081d32-6933-45e6-99e7-e05fd1f27864.png" title="Lab 3 - Results in a table below after submitting a string of words" width="40%">
+<img src="https://user-images.githubusercontent.com/79512058/162522985-6f195478-eec5-4c5e-b53f-886aa917943b.png" title="Lab 3 - Failure when attempting to submit without authentication" width="40%">
 
 <h2>Instructions to run (not locally) </h2>
 <p>This app should not be tested locally as it requires environment variables for JWT private keys</p>
