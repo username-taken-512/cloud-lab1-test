@@ -11,7 +11,7 @@ const npmParams = process.argv.slice(2);
 // For PostGRE db
 const { Pool } = require('pg');
 const pool = new Pool({
-  connectionString: process.env.DATABASE_URL || (npmParams[0] || 'postgres://lyeqjenywmqaqa:a01307f561de9f2c77416c542330554b1a1ea5814bfa2542847def3dffab31d3@ec2-34-246-227-219.eu-west-1.compute.amazonaws.com:5432/dbghtf4j5l65ac'),
+  connectionString: process.env.DATABASE_URL || (npmParams[0],
   ssl: {
     rejectUnauthorized: false
   }
